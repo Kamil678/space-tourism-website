@@ -12,3 +12,7 @@ p{
 body{
   font-family: var(--fontFamilyBellefair);
 }
+
+.home-page, .destination-page, .crew-page, .technology-page{
+  min-height: 100% !important;
+}

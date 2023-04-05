@@ -1,6 +1,6 @@
 <template>
   <q-layout>
-    <p>Menu</p>
+    <MainNavigation></MainNavigation>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -8,4 +8,5 @@
 </template>
 
 <script setup>
+import MainNavigation from 'src/components/nav/MainNavigation.vue';
 </script>
