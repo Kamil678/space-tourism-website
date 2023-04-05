@@ -1,15 +1,15 @@
-
 const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
+    redirect:'/home',
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '/home', component: () => import('pages/HomePage.vue') },
+      { path: '/destination', component: () => import('pages/DestinationPage.vue') },
+      { path: '/crew', component: () => import('pages/CrewPage.vue') },
+      { path: '/technology', component: () => import('pages/TechnologyPage.vue') },
     ]
   },
-
-  // Always leave this as last one,
-  // but you can also remove it
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
