@@ -8,11 +8,7 @@
 
   <q-tab-panels
     v-model="tab"
-    animated
-    swipeable
     vertical
-    transition-prev="jump-up"
-    transition-next="jump-up"
     class="all-destinations">
     <q-tab-panel v-for="destination in destinations" :key="destination.name" :name="destination.name" class="destination">
       <div class="destination-image">
@@ -25,11 +21,11 @@
         <div class="destination-numbers">
           <div class="destination-distance">
             <p>Avg. distance</p>
-            <p>{{ destination.distance }}</p>
+            <span>{{ destination.distance }}</span>
           </div>
           <div class="destination-travel-time">
             <p>Est. travel time</p>
-            <p>{{ destination.travelTime }}</p>
+            <span>{{ destination.travelTime }}</span>
           </div>
         </div>
       </div>
@@ -74,6 +70,50 @@ const destinations = [
 </script>
 
 <style lang="scss">
+.destinations-tabs {
+  font-family: $fontFamilyBrlow;
+  font-size: $fontNavText;
+  color: $white;
+  margin: 64px 135px 0 0;
+
+  .q-tabs__content--align-center {
+    justify-content: flex-end;
+  }
+
+  .q-tab {
+    padding: 0 17.5px 12px 17.5px;
+  }
+
+  .q-tab__label {
+    font-weight: 400;
+    font-size: $fontNavText;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+  }
+
+  .q-tab__indicator {
+    right: 17.5px;
+    left: 17.5px;
+  }
+
+  .q-ripple {
+    display: none;
+  }
+}
+
+.destinations-tabs.q-tabs .q-tab:hover {
+  div.q-focus-helper {
+    background: transparent;
+    opacity: 0;
+  }
+
+  .q-tab__indicator {
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+}
+
 .all-destinations {
   background: transparent;
 }
@@ -81,6 +121,7 @@ const destinations = [
 .destination {
   display: flex;
   justify-content: space-between;
+  padding: 0;
 
   .destination-image {
     width: 445px;
@@ -88,6 +129,10 @@ const destinations = [
   }
 
   .destination-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
     .destination-name {
       text-transform: uppercase;
       font-size: $fontSizeH2;
@@ -97,7 +142,7 @@ const destinations = [
     }
 
     .destination-description {
-      max-width: 444px;
+      max-width: 445px;
       font-family: $fontFamilyBrlow;
       font-size: 18px;
       color: $secondary;
@@ -107,9 +152,12 @@ const destinations = [
     }
 
     .destination-line {
-      width: 100%;
       height: 1px;
-      background-color: $primary;
+      background-color: $white;
+      width: 100%;
+      mix-blend-mode: normal;
+      opacity: 0.25;
+      margin-bottom: 28px;
     }
 
     .destination-numbers {
@@ -122,6 +170,23 @@ const destinations = [
       display: flex;
       flex-direction: column;
       color: $white;
+
+      p {
+        font-family: $fontFamilyBrlow;
+        font-size: 14px;
+        color: $secondary;
+        letter-spacing: 2.3635px;
+        line-height: 17px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      span {
+        font-size: $fontSizeH5;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
     }
   }
 
