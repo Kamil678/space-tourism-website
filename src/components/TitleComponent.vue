@@ -1,11 +1,12 @@
 <template>
   <div class="destination-title">
-    <span>01</span>
-    <h5>Pick your destination</h5>
+    <span>{{ number }}</span>
+    <h5>{{ titleText }}</h5>
   </div>
 </template>
 
 <script setup>
+const props = defineProps(['number', 'titleText']);
 </script>
 
 <style lang="scss">

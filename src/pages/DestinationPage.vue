@@ -1,13 +1,13 @@
 <template>
   <q-page class="destination-page">
-    <DestinationTitle></DestinationTitle>
+    <TitleComponent number="01" title-text="Pick your destination"></TitleComponent>
     <DestinationTabs></DestinationTabs>
   </q-page>
 </template>
 
 <script setup>
 import DestinationTabs from 'src/components/destination/DestinationTabs.vue';
-import DestinationTitle from 'src/components/destination/DestinationTitle.vue'
+import TitleComponent from 'src/components/TitleComponent.vue'
 </script>
 <style lang="scss">
 body:has(main.destination-page) {

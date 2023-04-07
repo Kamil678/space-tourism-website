@@ -22,7 +22,7 @@ import NavigationTabs from 'src/components/nav/NavigationTabs.vue'
   .logo {
     width: 48px;
     height: 48px;
-    margin-right: 48px;
+    margin-right: 64px;
   }
 
   .navigation-tabs {
