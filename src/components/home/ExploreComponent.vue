@@ -1,6 +1,6 @@
 <template>
   <div class="circle">
-    <h4>Explore</h4>
+    <h4 class="heading-4">Explore</h4>
   </div>
 </template>
 
@@ -19,10 +19,7 @@
 
   h4 {
     color: $primary;
-    font-size: $fontSizeH4;
     letter-spacing: 2px;
-    line-height: 37px;
-    font-weight: 400;
   }
 }
 </style>

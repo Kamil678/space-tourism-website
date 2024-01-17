@@ -3,21 +3,31 @@
     <q-icon name="img:icons/logo.svg" class="logo" />
     <div class="navigation-tabs">
       <div class="line"></div>
-      <NavigationTabs></NavigationTabs>
+      <NavigationTabs @close-menu="closeMenu"></NavigationTabs>
     </div>
+    <q-icon name="img:../src/assets/shared/icon-hamburger.svg" class="menu-icon" @click="openMenu" />
   </div>
 </template>
 
 <script setup>
 import NavigationTabs from 'src/components/nav/NavigationTabs.vue'
+
+const openMenu = () => {
+  document.querySelector('.tabs').classList.add('show')
+}
+
+const closeMenu = () => {
+  document.querySelector('.tabs').classList.remove('show')
+}
 </script>
 
 <style lang="scss">
 .main-navigation {
   display: flex;
   align-items: center;
-  margin: 0 0 0 55px;
-  padding-top: 40px;
+  justify-content: space-between;
+  margin: 25px 32px;
+
 
   .logo {
     width: 48px;
@@ -27,13 +37,18 @@ import NavigationTabs from 'src/components/nav/NavigationTabs.vue'
 
   .navigation-tabs {
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end;
     color: $white;
     font-family: $fontFamilyBrlow;
 
+    @media only screen and (min-width: $brekpointMedium) {
+      display: flex;
+    }
+
     .line {
+      display: none;
       height: 1px;
       background-color: $white;
       width: 100%;
@@ -41,7 +56,28 @@ import NavigationTabs from 'src/components/nav/NavigationTabs.vue'
       opacity: 0.25;
       margin-right: -30px;
       z-index: 2;
+
+      @media only screen and (min-width: $brekpointMedium) {
+        display: inline-block;
+      }
     }
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 21px;
+    display: block;
+
+    @media only screen and (min-width: $brekpointMedium) {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: $brekpointMedium) {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 55px;
+    padding-top: 40px;
   }
 }
 </style>

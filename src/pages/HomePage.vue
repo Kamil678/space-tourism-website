@@ -19,7 +19,12 @@ body:has(main.home-page) {
 .home-page {
   margin: 251px 165px 131px 165px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+
+  @media only screen and (min-width: $brekpointMedium) {
+    flex-direction: row;
+  }
 }
 </style>

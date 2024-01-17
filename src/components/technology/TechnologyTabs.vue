@@ -8,6 +8,8 @@
   <q-tab-panels
     v-model="tab"
     vertical
+    autoplay
+    keep-alive
     class="all-technology">
     <q-tab-panel v-for="technologyElement in technology" :key="technologyElement.name" :name="technologyElement.name" class="technology">
       <div class="technology-element">
@@ -128,8 +130,10 @@ const technology = [
       }
 
       .technology-image {
+        margin-left: 30px;
         width: 515px;
         height: 527px;
+        background-repeat: no-repeat;
       }
 
       .technology-image-launchVehicle {

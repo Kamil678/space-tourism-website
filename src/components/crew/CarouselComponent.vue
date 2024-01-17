@@ -4,7 +4,7 @@
     navigation
     padding
     class="slider">
-    <q-carousel-slide v-for="crewMember in allCrew" :key="crewMember.name" :name="crewMember.specialization" class="crew-member">
+    <q-carousel-slide v-for="crewMember in  allCrew " :key="crewMember.name" :name="crewMember.specialization" class="crew-member">
       <div class="crew-member-info">
         <h4 class="crew-member-specialization">{{ crewMember.specialization }}</h4>
         <h3 class="crew-member-name">{{ crewMember.name }}</h3>
@@ -26,7 +26,7 @@ const allCrew = [
     specialization: 'commander',
     name: 'Douglas Hurley',
     description: 'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
-    img: 'src/assets/crew/image-douglas-hurley.png',
+    img: "src/assets/crew/image-douglas-hurley.png",
   },
   {
     specialization: 'mission specialist',
