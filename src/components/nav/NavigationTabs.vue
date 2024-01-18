@@ -1,6 +1,7 @@
 <template>
   <q-tabs v-model="tab" class="tabs">
-    <q-icon name="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" />
+    <button-with-icon icon-path="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" />
+    <!-- <q-icon name="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" /> -->
     <q-route-tab to="/" name="home" label="00 Home" />
     <q-route-tab to="/destination" name="destination" label="01 Destination" />
     <q-route-tab to="/crew" name="crew" label="02 Crew" />
@@ -9,7 +10,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
+import ButtonWithIcon from '../shared/ButtonWithIcon.vue';
 const tab = ref('home');
 
 defineEmits(['closeMenu'])
@@ -25,6 +27,9 @@ defineEmits(['closeMenu'])
   height: 100vh;
   width: 250px;
   padding: 32px;
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: flex-start;
   //flex-shrink: 0;
 
   &.show {
@@ -37,18 +42,38 @@ defineEmits(['closeMenu'])
   }
 
   .close-icon {
-    width: 19px;
-    height: 19px;
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 100;
+
+    .q-icon {
+      width: 19px;
+      height: 19px;
+    }
   }
 
   .q-tab {
-    padding: 32px 0;
+    padding: 16px 0;
+    min-height: 20px;
+    height: 20px;
+    flex: none;
+
+    .q-tab__indicator {
+      display: none;
+    }
+
+    // .q-tab__content {
+    //   height: 20px;
+    // }
 
     @media only screen and (min-width: $brekpointMedium) {
       padding: 39px 24px 38px 24px;
+      min-height: 48px;
+
+      .q-tab__indicator {
+        display: block;
+      }
     }
   }
 

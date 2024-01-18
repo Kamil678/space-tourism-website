@@ -17,6 +17,7 @@ const openMenu = () => {
 }
 
 const closeMenu = () => {
+  console.log('ccc')
   document.querySelector('.tabs').classList.remove('show')
 }
 </script>
@@ -37,7 +38,7 @@ const closeMenu = () => {
 
   .navigation-tabs {
     width: 100%;
-    display: none;
+    //display: none;
     align-items: center;
     justify-content: flex-end;
     color: $white;
