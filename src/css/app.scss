@@ -18,7 +18,7 @@ body{
 }
 
 .heading-1{
-  font-size: $fontSizeH1;
+  font-size: 80px;
 }
 
 .heading-2{
@@ -30,13 +30,27 @@ body{
 }
 
 .heading-4{
-  font-size: $fontSizeH4;
+  font-size: 20px;
 }
 
 .heading-5{
   font-family: $fontFamilyBrlow !important;
-  font-size: $fontSizeH5;
+  font-size: 16px;
   letter-spacing: 4.75px;
+}
+
+@media only screen and (min-width: $brekpointMedium) {
+  .heading-1{
+    font-size: $fontSizeH1;
+  }
+
+  .heading-4{
+    font-size: $fontSizeH4;
+  }
+
+  .heading-5 {
+    font-size: $fontSizeH5;
+  }
 }
 
 .heading-1, .heading-2, .heading-3, .heading-4, .heading-5{

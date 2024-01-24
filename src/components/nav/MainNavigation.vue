@@ -58,7 +58,7 @@ const closeMenu = () => {
       margin-right: -30px;
       z-index: 2;
 
-      @media only screen and (min-width: $brekpointMedium) {
+      @media only screen and (min-width: $brekpointXL) {
         display: inline-block;
       }
     }
@@ -77,6 +77,10 @@ const closeMenu = () => {
   @media only screen and (min-width: $brekpointMedium) {
     display: flex;
     justify-content: flex-start;
+    margin: 0 0 0 55px;
+  }
+
+  @media only screen and (min-width: $brekpointXL) {
     margin: 0 0 0 55px;
     padding-top: 40px;
   }

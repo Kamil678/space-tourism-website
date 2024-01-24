@@ -1,11 +1,18 @@
 <template>
   <q-tabs v-model="tab" class="tabs">
     <button-with-icon icon-path="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" />
-    <!-- <q-icon name="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" /> -->
-    <q-route-tab to="/" name="home" label="00 Home" />
-    <q-route-tab to="/destination" name="destination" label="01 Destination" />
-    <q-route-tab to="/crew" name="crew" label="02 Crew" />
-    <q-route-tab to="/technology" name="technology" label="03 Technology" />
+    <q-route-tab to="/" name="home">
+      <p><span>00</span> Home</p>
+    </q-route-tab>
+    <q-route-tab to="/destination" name="destination">
+      <p><span>01</span> Destination</p>
+    </q-route-tab>
+    <q-route-tab to="/crew" name="crew">
+      <p><span>02</span> Crew</p>
+    </q-route-tab>
+    <q-route-tab to="/technology" name="technology">
+      <p><span>03</span> Technology</p>
+    </q-route-tab>
   </q-tabs>
 </template>
 
@@ -30,7 +37,15 @@ defineEmits(['closeMenu'])
   z-index: 2;
   justify-content: flex-start;
   align-items: flex-start;
-  //flex-shrink: 0;
+
+  .q-tabs__content {
+    position: static;
+    margin-top: 65px;
+
+    @media only screen and (min-width: $brekpointMedium) {
+      margin-top: 0;
+    }
+  }
 
   &.show {
     right: 0;
@@ -43,8 +58,8 @@ defineEmits(['closeMenu'])
 
   .close-icon {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 25px;
+    right: 25px;
     z-index: 100;
 
     .q-icon {
@@ -55,25 +70,45 @@ defineEmits(['closeMenu'])
 
   .q-tab {
     padding: 16px 0;
-    min-height: 20px;
-    height: 20px;
     flex: none;
+    justify-content: start;
 
     .q-tab__indicator {
       display: none;
     }
 
-    // .q-tab__content {
-    //   height: 20px;
-    // }
+    .q-tab__content {
+      font-size: 16px;
+      letter-spacing: 2.7px;
+      font-weight: 400;
+
+      span {
+        font-weight: 700;
+        display: inline;
+
+        @media only screen and (min-width: $brekpointMedium) {
+          display: none;
+        }
+
+        @media only screen and (min-width: $brekpointXL) {
+          display: inline;
+        }
+      }
+
+    }
 
     @media only screen and (min-width: $brekpointMedium) {
-      padding: 39px 24px 38px 24px;
-      min-height: 48px;
+      padding: 0 24px 0 24px;
+      min-height: 32px;
 
       .q-tab__indicator {
         display: block;
       }
+    }
+
+    @media only screen and (min-width: $brekpointXL) {
+      padding: 39px 24px 38px 24px;
+      min-height: 48px;
     }
   }
 
@@ -94,6 +129,21 @@ defineEmits(['closeMenu'])
   }
 
   @media only screen and (min-width: $brekpointMedium) {
+    position: relative;
+    height: auto;
+    width: auto;
+    right: 0;
+
+    .row {
+      flex-direction: row;
+    }
+
+    .close-icon {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: $brekpointXL) {
     padding: 0 165px 0 123px;
     position: relative;
     height: auto;

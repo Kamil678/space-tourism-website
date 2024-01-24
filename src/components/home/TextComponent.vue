@@ -16,6 +16,7 @@
 <style lang="scss">
 .home-page-description {
   max-width: 400px;
+  text-align: center;
 
   h5,
   p {
@@ -24,16 +25,28 @@
 
   h5,
   h1 {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   h1 {
     color: $white;
-    line-height: 172px;
+    line-height: 100px;
   }
 
   p {
     font-family: $fontFamilyBrlow;
+  }
+
+  @media only screen and (min-width: $brekpointMedium) {
+    max-width: 600px;
+
+    h1 {
+      line-height: 172px;
+    }
+  }
+
+  @media only screen and (min-width: $brekpointXL) {
+    text-align: left;
   }
 }
 </style>
