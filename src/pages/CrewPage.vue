@@ -1,5 +1,5 @@
 <template>
-  <q-page class="crew-page">
+  <q-page class="page page--crew">
     <TitleComponent number="02" title-text="Meet your crew"></TitleComponent>
     <CarouselComponent></CarouselComponent>
   </q-page>
@@ -11,13 +11,9 @@ import CarouselComponent from 'src/components/crew/CarouselComponent.vue';
 </script>
 
 <style>
-body:has(main.crew-page) {
+body:has(main.page--crew) {
   background-image: url('../assets/crew/background-crew-desktop.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.crew-page {
-  margin: 76px 137px 0 166px;
 }
 </style>

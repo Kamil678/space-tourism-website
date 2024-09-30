@@ -1,6 +1,6 @@
 <template>
   <div class="circle">
-    <h4 class="heading-4">Explore</h4>
+    <h4 class="heading-4 circle__text">Explore</h4>
   </div>
 </template>
 
@@ -14,10 +14,10 @@
   align-items: center;
   background-color: $white;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
-  h4 {
+  &__text {
     color: $primary;
     letter-spacing: 2px;
   }
@@ -26,7 +26,7 @@
     width: 274px;
     height: 274px;
 
-    h4 {
+    &__text {
       letter-spacing: 1.25px;
     }
   }

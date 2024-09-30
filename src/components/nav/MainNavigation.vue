@@ -3,23 +3,24 @@
     <q-icon name="img:icons/logo.svg" class="logo" />
     <div class="navigation-tabs">
       <div class="line"></div>
-      <NavigationTabs @close-menu="closeMenu"></NavigationTabs>
+      <NavigationTabs :open-menu="openMenu" @close-menu="openMenu = false"></NavigationTabs>
     </div>
-    <q-icon name="img:../src/assets/shared/icon-hamburger.svg" class="menu-icon" @click="openMenu" />
+    <q-icon name="img:../src/assets/shared/icon-hamburger.svg" class="menu-icon" @click="openMenu = true" />
   </div>
 </template>
 
 <script setup>
 import NavigationTabs from 'src/components/nav/NavigationTabs.vue'
+import { ref } from 'vue';
 
-const openMenu = () => {
-  document.querySelector('.tabs').classList.add('show')
-}
+// const openMenu = () => {
+//   document.querySelector('.tabs').classList.add('show')
+// }
 
-const closeMenu = () => {
-  console.log('ccc')
-  document.querySelector('.tabs').classList.remove('show')
-}
+// const closeMenu = () => {
+//   document.querySelector('.tabs').classList.remove('show')
+// }
+const openMenu = ref(false);
 </script>
 
 <style lang="scss">
@@ -38,7 +39,6 @@ const closeMenu = () => {
 
   .navigation-tabs {
     width: 100%;
-    //display: none;
     align-items: center;
     justify-content: flex-end;
     color: $white;

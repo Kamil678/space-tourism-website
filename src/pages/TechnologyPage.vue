@@ -1,7 +1,7 @@
 <template>
-  <q-page class="technology-page">
+  <q-page class="page page--technology">
     <TitleComponent number="03" title-text="Space launch 101"></TitleComponent>
-    <div class="tabs">
+    <div class="page--technology__tabs">
       <TechnologyTabs></TechnologyTabs>
     </div>
   </q-page>
@@ -13,20 +13,9 @@ import TechnologyTabs from 'src/components/technology/TechnologyTabs.vue';
 </script>
 
 <style lang="scss">
-body:has(main.technology-page) {
+body:has(main.page--technology) {
   background-image: url('../assets/technology/background-technology-desktop.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.technology-page {
-  margin: 76px 0 101px 166px;
-
-  .tabs {
-    display: flex;
-    align-items: center;
-    margin-top: 26px;
-    width: 100%;
-  }
 }
 </style>

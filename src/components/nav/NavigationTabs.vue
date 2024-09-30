@@ -1,25 +1,32 @@
 <template>
-  <q-tabs v-model="tab" class="tabs">
+  <q-tabs v-model="tab" class="tabs" :class="{'show':openMenu}">
     <button-with-icon icon-path="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" />
-    <q-route-tab to="/" name="home">
+    <q-route-tab to="/" name="home"  @click="$emit('closeMenu')">
       <p><span>00</span> Home</p>
     </q-route-tab>
-    <q-route-tab to="/destination" name="destination">
+    <q-route-tab to="/destination" name="destination" @click="$emit('closeMenu')">
       <p><span>01</span> Destination</p>
     </q-route-tab>
-    <q-route-tab to="/crew" name="crew">
+    <q-route-tab to="/crew" name="crew" @click="$emit('closeMenu')">
       <p><span>02</span> Crew</p>
     </q-route-tab>
-    <q-route-tab to="/technology" name="technology">
+    <q-route-tab to="/technology" name="technology" @click="$emit('closeMenu')">
       <p><span>03</span> Technology</p>
     </q-route-tab>
   </q-tabs>
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { ref, defineEmits, defineProps } from 'vue'
 import ButtonWithIcon from '../shared/ButtonWithIcon.vue';
 const tab = ref('home');
+
+defineProps({
+  openMenu: {
+    type: Boolean,
+    required: true,
+  },
+});
 
 defineEmits(['closeMenu'])
 </script>
