@@ -1,11 +1,10 @@
 <template>
   <div class="circle">
-    <h4 class="heading-4 circle__text">Explore</h4>
+    <h4 class="circle__text">Explore</h4>
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss">
 .circle {
@@ -18,6 +17,7 @@
   height: 200px;
 
   &__text {
+    font-size: 20px;
     color: $primary;
     letter-spacing: 2px;
   }

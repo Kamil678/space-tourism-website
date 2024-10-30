@@ -8,5 +8,5 @@
 </template>
 
 <script setup>
-import MainNavigation from 'src/components/nav/MainNavigation.vue';
+import MainNavigation from "src/components/MainNavigation.vue";
 </script>

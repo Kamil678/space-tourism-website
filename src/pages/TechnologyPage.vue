@@ -13,7 +13,7 @@
 
 <script setup>
 import TitleComponent from "src/components/TitleComponent.vue";
-import TechnologyTabs from "src/components/technology/TechnologyTabs.vue";
+import TechnologyTabs from "src/components/TechnologyTabs.vue";
 </script>
 
 <style lang="scss">

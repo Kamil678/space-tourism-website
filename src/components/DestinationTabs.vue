@@ -17,7 +17,9 @@
         <q-img :src="destination.img" :alt="destination.name" />
       </div>
       <div class="all-destinations__destination__info">
-        <h2 class="heading-2 all-destinations__destination__info__name">
+        <h2
+          class="heading heading--2 all-destinations__destination__info__name"
+        >
           {{ destination.name }}
         </h2>
         <p class="text all-destinations__destination__info__description">

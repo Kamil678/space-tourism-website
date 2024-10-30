@@ -15,7 +15,7 @@
       <div class="technology-element">
         <div class="technology-element__info">
           <p class="technology-element__info__entry">The terminology ...</p>
-          <h3 class="technology-element__info__title heading-3">
+          <h3 class="technology-element__info__title heading heading--3">
             {{ technologyElement.title }}
           </h3>
           <p class="technology-element__info__description">

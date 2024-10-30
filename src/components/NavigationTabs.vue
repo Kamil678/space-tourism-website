@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref, defineEmits, defineProps } from "vue";
-import ButtonWithIcon from "../shared/ButtonWithIcon.vue";
+import ButtonWithIcon from "./ButtonWithIcon.vue";
 const tab = ref("home");
 
 defineProps({
