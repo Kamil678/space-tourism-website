@@ -65,13 +65,22 @@ body {
   }
 
   &--technology {
-    margin: 76px 0 101px 166px;
+    margin: 76px 0 101px 0;
 
     &__tabs {
       display: flex;
       align-items: center;
       margin-top: 26px;
       width: 100%;
+      flex-direction: column-reverse;
+
+      @media (min-width: $brekpointXL) {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: $brekpointXL) {
+      margin-left: 166px;
     }
   }
 }
@@ -100,7 +109,18 @@ body {
 }
 
 .heading-3 {
-  font-size: $fontSizeH3;
+  font-size: 36px;
+  line-height: 42px;
+
+  @media (min-width: $brekpointMedium) {
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  @media (min-width: $brekpointLarge) {
+    font-size: $fontSizeH3;
+    line-height: 64px;
+  }
 }
 
 .heading-4 {

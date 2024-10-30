@@ -1,10 +1,18 @@
 <template>
-  <q-tabs v-model="tab" class="tabs" :class="{'show':openMenu}">
-    <button-with-icon icon-path="img:../src/assets/shared/icon-close.svg" class="close-icon" @click="$emit('closeMenu')" />
-    <q-route-tab to="/" name="home"  @click="$emit('closeMenu')">
+  <q-tabs v-model="tab" class="tabs" :class="{ show: openMenu }">
+    <button-with-icon
+      icon-path="img:../src/assets/shared/icon-close.svg"
+      class="close-icon"
+      @click="$emit('closeMenu')"
+    />
+    <q-route-tab to="/" name="home" @click="$emit('closeMenu')">
       <p><span>00</span> Home</p>
     </q-route-tab>
-    <q-route-tab to="/destination" name="destination" @click="$emit('closeMenu')">
+    <q-route-tab
+      to="/destination"
+      name="destination"
+      @click="$emit('closeMenu')"
+    >
       <p><span>01</span> Destination</p>
     </q-route-tab>
     <q-route-tab to="/crew" name="crew" @click="$emit('closeMenu')">
@@ -17,9 +25,9 @@
 </template>
 
 <script setup>
-import { ref, defineEmits, defineProps } from 'vue'
-import ButtonWithIcon from '../shared/ButtonWithIcon.vue';
-const tab = ref('home');
+import { ref, defineEmits, defineProps } from "vue";
+import ButtonWithIcon from "../shared/ButtonWithIcon.vue";
+const tab = ref("home");
 
 defineProps({
   openMenu: {
@@ -28,7 +36,7 @@ defineProps({
   },
 });
 
-defineEmits(['closeMenu'])
+defineEmits(["closeMenu"]);
 </script>
 
 <style lang="scss">
@@ -101,7 +109,6 @@ defineEmits(['closeMenu'])
           display: inline;
         }
       }
-
     }
 
     @media only screen and (min-width: $brekpointMedium) {
@@ -140,6 +147,7 @@ defineEmits(['closeMenu'])
     height: auto;
     width: auto;
     right: 0;
+    backdrop-filter: none;
 
     .row {
       flex-direction: row;
@@ -174,7 +182,7 @@ defineEmits(['closeMenu'])
   }
 
   .q-tab__indicator {
-    background: #FFFFFF;
+    background: #ffffff;
     mix-blend-mode: normal;
     opacity: 0.5;
   }

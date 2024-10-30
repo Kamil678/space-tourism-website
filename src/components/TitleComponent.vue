@@ -1,39 +1,38 @@
 <template>
-  <div class="destination-title">
-    <span>{{ number }}</span>
-    <h5>{{ titleText }}</h5>
+  <div class="title">
+    <span class="title__element title__element--span">{{ number }}</span>
+    <h5 class="title__element title__element--h5">{{ titleText }}</h5>
   </div>
 </template>
 
 <script setup>
-const props = defineProps(['number', 'titleText']);
+const props = defineProps(["number", "titleText"]);
 </script>
 
 <style lang="scss">
-.destination-title {
+.title {
   display: flex;
   align-items: center;
 
-  span,
-  h5 {
+  &__element {
     font-family: $fontFamilyBrlow;
     font-size: $fontSizeH5;
     line-height: 34px;
     letter-spacing: 4.725px;
-    color: #FFFFFF;
-  }
+    color: #ffffff;
 
-  span {
-    font-weight: 700;
-    font-size: 28px;
-    mix-blend-mode: normal;
-    opacity: 0.25;
-    margin-right: 28px;
-  }
+    &--span {
+      font-weight: 700;
+      font-size: 28px;
+      mix-blend-mode: normal;
+      opacity: 0.25;
+      margin-right: 28px;
+    }
 
-  h5 {
-    font-weight: 400;
-    text-transform: uppercase;
+    &--h5 {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
   }
 }
 </style>
